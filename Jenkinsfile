@@ -14,12 +14,7 @@ pipeline{
                 sh 'mvn clean compile'
             }
         }
-        stage('Test'){
-            steps{
-                sh 'mvn test'
-                junit '++/target/surefire-reports/TEST-*.xml'
-            }
-        }
+
         stage('Deploy'){
             steps{
                 input 'Do you approve the deployment?'
